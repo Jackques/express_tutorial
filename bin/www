@@ -1,5 +1,20 @@
 #!/usr/bin/env node
 
+/* 
+Jack: this is actually the startupscript for Express.
+This script will start off the app.js in the root folder (yeah kindoff odd since usually the app.js in the root directory will be the starting point.
+
+- All modules present in the Node-Modules by default are core modules (needed to actually run Express itself. Every other module that I would need
+also goes into that folder (pretty much like i am used to).
+
+- Pulic folder, this folder is compareable to the public folder on other webserversoftware (like Apache). The public folder is the folder which users can access and which would be used for things like images, javascript (which the users may access!), stylesheets etc.
+
+- Routes folder, pretty much your pages, (the urls users can access and what they link to, you can either forward users to other pages or link a specific template to a specific page.
+
+- Views, your html templates go here. They will be formatted in the chosen language (for this language i chose Jade.. which is a templating language because it's very simple and small thus easy to read, and easy to inject lots of (for example) the same text on many different templates) or dynamic text which can be altered on a per template * page basis.
+
+*/
+
 /**
  * Module dependencies.
  */

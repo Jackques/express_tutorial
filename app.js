@@ -1,19 +1,28 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
+//Jack: logger is used for logging out things to the terminal
 var logger = require('morgan');
+//Jack: for using cookies
 var cookieParser = require('cookie-parser');
+//Jack: for using templates (pretty much)
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+//Jack: creates an variabele to viewlogic code stored in the file below (and this file also points to where the template is which it should use)
+var about = require('./routes/about');
+
 var app = express();
+
+app.locals.basedir = path.join(__dirname, 'views');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//Jack: Below is basic configuration for the website, like where to find the favicon, to use urlencoding and whatnot
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -22,9 +31,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Jack: Below we set the pages to which object they should use
 app.use('/', index);
 app.use('/users', users);
 
+//Jack: Actually creates the about page and links the variabele created above to it
+app.use('/about', about);
+
+
+//Jack: Below are errorhandlers for development
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
