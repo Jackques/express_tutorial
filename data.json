@@ -1,0 +1,23 @@
+{
+    "name": "Jack",
+    "professions": [
+        {
+                "name": "front-end developer",
+                "salary": 3000,
+                "description:": "someone who builds the view for web applications",
+                "tags": ["front-end", "design", "web"]
+        },
+        {
+                "name": "dishwasher",
+                "salary": 200,
+                "description:": "washes the dishes and keeps the restaurant clean!",
+                "tags": ["restaurant", "culinary", "dining"]
+        },
+        {
+                "name": "banker",
+                "salary": 5000,
+                "description:": "Keeps the money safe from YOU!",
+                "tags": ["money", "Trump"]
+        }
+    ]
+}

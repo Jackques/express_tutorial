@@ -1,0 +1,14 @@
+link(href='/stylesheets/style.css', rel='stylesheet')
+
+block content
+
+  //- since this template is not extended by layout.jade, i decided to also include the menu here manually
+  include templates/menu
+
+  h1 HI my name is jack
+  h2 my teacher is #{teacher}
+  ul
+      for user in users
+        li= user.name
+      else
+        li sorry, nothing to show!

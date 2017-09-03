@@ -1,5 +1,21 @@
 extends layout
 
+link(href='/stylesheets/style.css', rel='stylesheet')
+
 block content
+
   h1= title
   p Welcome to #{title}
+  p this is my favourite text: #{favtext}
+  p a pretty cool band: #{coolband}
+  
+  // This heading probably won't show up on the page, but will appear as a comment in the browser HTML DOM
+  
+  //- h2 This heading won't show up, nor appear as a comment in the DOM 
+  
+  b This is my name (sent by JSON): #{personalinfo.name}
+  ul
+      for info in personalinfo.professions
+        li= info.name
+      else
+        li sorry, nothing to show!

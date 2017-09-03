@@ -1,0 +1,19 @@
+{
+    "userslist": [
+        {
+                "name": "Jack",
+                "password": "cuddles",
+                "employee_id": 45
+        },
+        {
+                "name": "Sara",
+                "password": "Sprinkels",
+                "employee_id:": 23
+        },
+        {
+                "name": "Ben",
+                "password": "TranceDance",
+                "employee_id:": 788
+        }
+    ]
+}

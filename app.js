@@ -18,6 +18,14 @@ var app = express();
 
 app.locals.basedir = path.join(__dirname, 'views');
 
+// Jack: the local variabele below is sortoff a global object, thus the favText variabele can be used anywhere in the app. (see it in action in the header template!).
+// Jack: NPM server restart to see the effect!
+app.locals.favtext = "This is my favourite text!";
+app.locals.coolband = "Sineria";
+
+// Jack: Import from current directory, thus using a single point here
+app.locals.personalinfo = require('./data.json');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -31,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Jack: Below we set the pages to which object they should use
+//Jack: Below we set the pages to which object (route) they should use
 app.use('/', index);
 app.use('/users', users);
 
